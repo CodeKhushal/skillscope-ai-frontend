@@ -3,6 +3,7 @@ import { useState } from "react";
 import ResumeUpload from "./components/ResumeUpload";
 import JobMatches from "./components/JobMatches";
 import SkillGap from "./components/SkillGap";
+import { Analytics } from '@vercel/analytics/react';
 import "./App.css";
 
 // A simple spinner component
@@ -53,6 +54,7 @@ function App() {
       <footer className="App-footer">
         <p>Made by Khushal Sachdeva</p>
       </footer>
+      <Analytics />
     </div>
   );
 }
