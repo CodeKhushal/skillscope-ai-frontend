@@ -1,0 +1,338 @@
+/* frontend/src/App.css */
+
+/* --- CSS Variables for Theming --- */
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover: #357ABD;
+    --background-color: #f7f9fc;
+    --text-color: #333;
+    --light-text-color: #666;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+    --font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    width: 98.9vw;
+    min-height: 100vh;
+}
+
+.layout-container {
+  width: 100%;
+    box-sizing: border-box;
+}
+
+.App-header {
+    background: var(--card-background);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+
+    /* Add these: */
+    width: 97.6%;
+    margin: 0 auto;
+}
+
+.App-header h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0;
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.App-footer {
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: auto;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+main {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+
+/* --- Card Style --- */
+.card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Resume Upload Component --- */
+.resume-upload-container h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.resume-upload-container p {
+    color: var(--light-text-color);
+    margin-bottom: 1.5rem;
+}
+
+.resume-upload-container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    background-color: #f7f9fc;
+    color: var(--text-color);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* ADDED this to style the placeholder text */
+textarea::placeholder {
+    color: #999;
+}
+
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--light-text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+.divider::before { margin-right: 1rem; }
+.divider::after { margin-left: 1rem; }
+
+#file-upload {
+    display: none;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+    color: var(--light-text-color);
+}
+
+.file-upload-label:hover {
+    background-color: #f0f4ff;
+    border-color: var(--primary-color);
+}
+
+.file-upload-label svg {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+}
+
+.analyze-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.analyze-button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- Results Grid --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Job Matches Component --- */
+.job-matches-container h2 {
+    margin-top: 0;
+}
+.job-matches-container p {
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+.job-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-list li {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.job-list li:hover {
+    background-color: #f0f4ff;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.job-list li.selected {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* --- Skill Gap Component --- */
+.skill-gap-container.placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--light-text-color);
+}
+
+.skill-gap-container h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.skills-section {
+    margin-top: 1.5rem;
+}
+
+.skills-section h4 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skills-list, .recommendations-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list.required li {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    color: #0363a0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.recommendations-list li {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.recommendations-list .skill-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.course-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+.course-link svg {
+    margin-left: 0.5rem;
+}
+
+/* --- Loader and Error --- */
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 3rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    background-color: #fff0f0;
+    border: 1px solid #ffc1c1;
+    color: #d8000c;
+    text-align: center;
+    font-weight: 500;
+}
