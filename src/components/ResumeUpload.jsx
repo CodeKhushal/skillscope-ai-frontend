@@ -1,6 +1,6 @@
 // frontend/src/components/ResumeUpload.jsx
 import { useState } from 'react';
-// const devUrl = import.meta.env.VITE_DEV_ENV_URL;
+const devUrl = import.meta.env.VITE_DEV_ENV_URL;
 const prodUrl = import.meta.env.VITE_PROD_ENV_URL;
 const baseUrl = prodUrl;
 
