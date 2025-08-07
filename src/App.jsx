@@ -52,7 +52,7 @@ function App() {
         </main>
       </div>
       <footer className="App-footer">
-        <p>Made by Khushal Sachdeva</p>
+        <p>Made by Khushal Sachdeva & Ishita Jain</p>
       </footer>
       <Analytics />
     </div>
